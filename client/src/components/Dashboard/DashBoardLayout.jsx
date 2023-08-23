@@ -72,7 +72,7 @@ function DashBoardLayout(props) {
     };
 
     const logout = () => {
-      window.open("http://localhost:5000/auth/logout", "_self");
+      window.open("https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/auth/logout", "_self");
     };
 
   return (

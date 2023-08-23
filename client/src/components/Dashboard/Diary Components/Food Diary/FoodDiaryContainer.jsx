@@ -76,7 +76,7 @@ function FoodDiaryContainer(props) {
   // WHEN USER CLICKS ON THE REMOVE FROM DIARY BUTTON, THIS BUTTON WILL HANDLE THE REMOVAL OF THE ITEM IN THE DIARY BY POSTING THE ITEM THAT NEEDS TO BE REMOVED TO THE BACKEND (WHICH WILL REMOVE FROM MONGOOSE).
   const handleDiaryItemRemove = async (selected) => {
     try {
-        const response = await axios.post('http://localhost:5000/removeDiaryItem', { selected });
+        const response = await axios.post('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/removeDiaryItem', { selected });
         console.log(response);
         console.log(response.data);
         props.diaryItemRemoved();
@@ -98,7 +98,7 @@ function FoodDiaryContainer(props) {
   const handleFoodFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const foodAPI = await axios.post("http://localhost:3000/foodModal/apiCall", foodFormData);
+      const foodAPI = await axios.post("https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/foodModal/apiCall", foodFormData);
       setFoodAPIResponse(foodAPI.data);
       setFoodShowTable(true);
     } catch (error) {
@@ -130,7 +130,7 @@ function FoodDiaryContainer(props) {
     })
     console.log(data);
     try {
-        const response = await axios.post('http://localhost:5000/foodModal/foodDiarySave', data);
+        const response = await axios.post('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/foodModal/foodDiarySave', data);
         console.log(response);
         console.log(response.data);
         props.foodDiaryUpdated();
@@ -152,7 +152,7 @@ function FoodDiaryContainer(props) {
   const handleExerciseFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const exerciseAPI = await axios.post("http://localhost:3000/exerciseModal/apiCall", exerciseFormData);
+      const exerciseAPI = await axios.post("https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/exerciseModal/apiCall", exerciseFormData);
       setExerciseAPIResponse(exerciseAPI.data);
       setExerciseShowTable(true);
     } catch (error) {
@@ -179,7 +179,7 @@ function FoodDiaryContainer(props) {
       }
     })
     try {
-        const response = await axios.post('http://localhost:5000/exerciseModal/exerciseDiarySave', data);
+        const response = await axios.post('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/exerciseDiarySave', data);
         props.exerciseDiaryUpdated();
     } catch (error) {
         console.error(error);
@@ -247,7 +247,7 @@ function FoodDiaryContainer(props) {
             </Typography>
           </DialogTitle>
           <DialogContent>
-          <form method="POST" action="http://localhost:3000/foodModal/apiCall" onSubmit={handleFoodFormSubmit}>
+          <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/apiCall" onSubmit={handleFoodFormSubmit}>
             <FormControl fullWidth={true}>
             <Stack direction="row" spacing={2} mt={1}>
               <TextField 
@@ -317,7 +317,7 @@ function FoodDiaryContainer(props) {
               </>
             ): (
               <DialogContent>
-              <form method="POST" action="http://localhost:5000/foodModal/foodDiarySave" onSubmit={handleFoodDiarySubmit}>
+              <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/foodModal/foodDiarySave" onSubmit={handleFoodDiarySubmit}>
                 <EnhancedFoodTable 
                   rows={foodAPIResponse} 
                   headCells={foodHeadCells} 
@@ -349,7 +349,7 @@ function FoodDiaryContainer(props) {
             </Typography>
           </DialogTitle>
           <DialogContent>
-            <form method="POST" action="http://localhost:3000/exerciseModal/apiCall" onSubmit={handleExerciseFormSubmit}>
+            <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/exerciseModal/apiCall" onSubmit={handleExerciseFormSubmit}>
             <FormControl fullWidth={true}>
             <Stack direction="row" spacing={2} mt={1}>
               <TextField 
@@ -400,7 +400,7 @@ function FoodDiaryContainer(props) {
               </>
             ): (
               <DialogContent>
-              <form method="POST" action="http://localhost:5000/exerciseModal/exerciseDiarySave" onSubmit={handleExerciseDiarySubmit}>
+              <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/exerciseModal/exerciseDiarySave" onSubmit={handleExerciseDiarySubmit}>
                 <EnhancedExerciseTable 
                   rows={exerciseAPIResponse} 
                   headCells={exerciseHeadCells} 
@@ -433,7 +433,7 @@ function FoodDiaryContainer(props) {
               variant = "outlined"
               sx={{ borderRadius: "10px" }}
             >
-              <form method="POST" action="http://localhost:5000/removeDiaryItem" onSubmit={handleDiaryItemRemove}>
+              <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/removeDiaryItem" onSubmit={handleDiaryItemRemove}>
                 <DiaryTable 
                   rows={props.allDiaryEntries} 
                   headCells={diaryHeadCells} 

@@ -74,7 +74,7 @@ function BMRContainer(props) {
     // WILL POST THE FORM DATA TO BACKEND SERVER.
     function formSubmit(event){
       updateBMR()
-      fetch('http://localhost:5000/addBMR', {
+      fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/addBMR', {
         method: "POST",
         headers: {
           'Content-type': 'application/json'
@@ -92,7 +92,7 @@ function BMRContainer(props) {
     }
 
     function fetchUpdatedBMR(){
-      fetch('http://localhost:5000/dashboard', {
+      fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/api/dashboard', {
           method: 'GET',
           headers: {'Content-Type': 'application/json'},
           credentials: "include"
@@ -182,7 +182,7 @@ function BMRContainer(props) {
             >
             <BMRSummary />  
             <br />
-          <form method="POST" action="http://localhost:5000/addBMR" onSubmit={event=>{formSubmit(event)}}>
+          <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/addBMR" onSubmit={event=>{formSubmit(event)}}>
             <FormControl fullWidth>      
               <Grid container className="fullBMRFormContainer">
                 {/* GENDER SELECT */}
