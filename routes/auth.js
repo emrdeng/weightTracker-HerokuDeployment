@@ -14,7 +14,7 @@ router.get('/google',
 router.get('/google/callback',
   passport.authenticate('google', {
     failureRedirect: 'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/Login',
-    successRedirect: 'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/dashboard'
+    successRedirect: 'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/'
   })
 );
 
