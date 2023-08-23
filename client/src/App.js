@@ -63,11 +63,10 @@ function App() {
 }
 
 function PrivateRoute({ user, ...rest }) {
-  return user ? (
-    <Route {...rest} />
-  ) : (
-    <Navigate to="/Login" replace />
-  );
+  if (user) {
+    return <Route {...rest} />;
+  }
+  return <Route path="*" element={<Navigate to="/Login" replace />} />;
 }
 
 export default App;
