@@ -40,7 +40,7 @@ const DashBoard = () => {
   const [BMRProfile, setBMRProfile] = useState(false);
 
   function fetchUserInfo(){
-    fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/dashboard?date=' + formattedDate, {
+    fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/api/dashboard?date=' + formattedDate, {
           method: 'GET',
           headers: {'Content-Type': 'application/json'},
           credentials: "include"

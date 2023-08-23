@@ -10,7 +10,7 @@ const Food = require("../models/foodSchema.js");
 const Exercise = require("../models/exerciseSchema.js");
 var authHandler = require('./auth.js');
 
-router.get("/dashboard", async(req,res)=>{
+router.get("/api/dashboard", async(req,res)=>{
     try{
         let selectedDate = req.query.date;
         let selectedDateFormatted = new Date(moment(selectedDate).startOf("d").format().slice(0,10));
@@ -44,7 +44,7 @@ router.get("/dashboard", async(req,res)=>{
     }
 })
 
-router.get("/trends", async(req,res)=>{
+router.get("/api/trends", async(req,res)=>{
     try{
         let todayDate = req.query.date;
         let range = req.query.range;
