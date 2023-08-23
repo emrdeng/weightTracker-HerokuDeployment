@@ -1,0 +1,54 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@300;400;500;700;800&display=swap');
+
+html,
+body,
+#root,
+.app{
+  height: 100%;
+  width: 100%;
+  font-family: 'Solway', serif;
+  display: "flex";
+  margin: 0;
+  position: absolute;
+}
+
+.img{
+  left: 0;
+  top:0;
+  right: 0
+}
+
+.imageContainer{
+    background-image: url("https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.simpleFlex{
+  display: flex;
+  background-color: green;
+  width: 100%;
+  height: 100%
+}
+
+.solwayFont{
+  font-family: 'Solway', serif;
+}
+
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 10px;
+  width: 60%;
+  height: 50%
+}
+
+.max-content-cell {
+  width: max-content;
+}
