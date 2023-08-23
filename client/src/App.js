@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate
 } from "react-router-dom";
 import HomePage from './components/Homepage/index';
 import Login from './components/Login/index';
@@ -44,18 +45,28 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/Login" element={<Login />} />
-      {user ? (
+      <PrivateRoute path="/dashboard" element={<Dashboard />} user={user} />
+      <PrivateRoute path="/dashboard/trends" element={<Trends />} user={user} />
+      {/* {user ? (
         <>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/trends" element={<Trends />} />
         </>
       ) : (
         <Route path="/dashboard" element={<Login />} />
-      )}
+      )} */}
       {/* <Route path="/dashboard" element={user ? <Dashboard /> : <Login />} />
       <Route path="/dashboard/trends" element={<Trends />} /> */}
     </Routes>
     </Router>
+  );
+}
+
+function PrivateRoute({ user, ...rest }) {
+  return user ? (
+    <Route {...rest} />
+  ) : (
+    <Navigate to="/Login" replace />
   );
 }
 
