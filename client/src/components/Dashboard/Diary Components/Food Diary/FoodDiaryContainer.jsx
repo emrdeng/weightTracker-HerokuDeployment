@@ -247,7 +247,7 @@ function FoodDiaryContainer(props) {
             </Typography>
           </DialogTitle>
           <DialogContent>
-          <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/apiCall" onSubmit={handleFoodFormSubmit}>
+          <form method="POST" action="https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/foodModal/apiCall" onSubmit={handleFoodFormSubmit}>
             <FormControl fullWidth={true}>
             <Stack direction="row" spacing={2} mt={1}>
               <TextField 
