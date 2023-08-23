@@ -13,7 +13,7 @@ import CenterTypography from '../../css-components/CenterTypography';
 
 const Login = () => {
   const google = ()=>{
-    window.open("http://localhost:5000/auth/google/callback", "_self")
+    window.open("https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/auth/google/callback", "_self")
   }
   return (
     <>

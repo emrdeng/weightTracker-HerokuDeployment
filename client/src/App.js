@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
+      fetch("https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {

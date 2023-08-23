@@ -78,7 +78,7 @@ function Trends() {
     let date = dayjs(DateTime.local());
     let formattedDate = date.format('YYYY-MM-DD');
 
-    fetch('http://localhost:5000/trends?date=' + formattedDate + '&range=' + range, {
+    fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/trends?date=' + formattedDate + '&range=' + range, {
       method: 'GET',
       headers: {'Content-Type': 'application/json'},
       credentials: "include"

@@ -13,7 +13,7 @@ require("./models/passport");
 let app = express();
 
 // ** MIDDLEWARE ** //
-const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://shrouded-journey-38552.heroku...']
+const whitelist = ['https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/']
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("** Origin of request " + origin)

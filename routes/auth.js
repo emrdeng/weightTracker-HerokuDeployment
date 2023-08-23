@@ -13,8 +13,8 @@ router.get('/google',
 
 router.get('/google/callback',
   passport.authenticate('google', {
-    failureRedirect: 'http://localhost:3000/Login',
-    successRedirect: 'http://localhost:3000/dashboard'
+    failureRedirect: 'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/Login',
+    successRedirect: 'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/dashboard'
   })
 );
 
@@ -44,7 +44,7 @@ router.get("/login/failed", (req, res) => {
 router.get("/logout", (req,res, next)=>{
   req.logout(function(err){
     if(err){return next(err)}
-    res.redirect("http://localhost:3000/")
+    res.redirect("https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com")
   });
 })
 
