@@ -25,6 +25,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "heroku": "^8.3.1",
     "moment": "^2.29.4",
     "mongoose": "^6.7.5",
     "nodemon": "^2.0.20",
