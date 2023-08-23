@@ -44,8 +44,16 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/Login" element={<Login />} />
-      <Route path="/dashboard" element={user ? <Dashboard /> : <Login />} />
-      <Route path="/dashboard/trends" element={<Trends />} />
+      {user ? (
+        <>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/trends" element={<Trends />} />
+        </>
+      ) : (
+        <Route path="/dashboard" element={<Login />} />
+      )}
+      {/* <Route path="/dashboard" element={user ? <Dashboard /> : <Login />} />
+      <Route path="/dashboard/trends" element={<Trends />} /> */}
     </Routes>
     </Router>
   );
