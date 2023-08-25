@@ -212,8 +212,16 @@ router.post("/addBMR", async (req, res)=>{
 
         let newWeight = await Weight.create({ weight: weightInput });
         let updatedUserWeight = await User.findByIdAndUpdate(userID, {$push: { weight: newWeight._id }}, { new: true });
+
+        //FOR DEBUGGING. REMOVE.
+        // Send a success response with calculated BMR
+        res.json({ success: true, bmr: bmrCalc() });
+
     } catch(e){
         return console.log(e);
+        //FOR DEBUGGING. REMOVE.
+        // Send an error response
+        res.status(500).json({ success: false, message: e.message });
     }  
 })
 

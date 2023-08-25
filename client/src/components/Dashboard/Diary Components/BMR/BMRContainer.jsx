@@ -81,17 +81,31 @@ function BMRContainer(props) {
         },
         body: JSON.stringify(allBMRValues)
       })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+            throw new Error(`Server responded with ${response.status}`);
+        }
+        return response.json();
+      })
       .then((result) => {
-        props.onSubmit();
-        setBMRValues({...allBMRValues, BMR: result.bmr})
+        if (result.success) {
+          props.onSubmit();
+          setBMRValues({...allBMRValues, BMR: result.bmr});
+        } else {
+          console.error("Error from server:", result.message);
+      }
+      })
+      .catch((error) => {
+        console.error("addBMR fetch failed:", error);
       });
+
       event.preventDefault();
       fetchUpdatedBMR()
       props.BMRProfileUpdated();
     }
 
     function fetchUpdatedBMR(){
+      console.log("fetchUpdatedBMR() reached!")
       fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/api/dashboard', {
           method: 'GET',
           headers: {'Content-Type': 'application/json'},
