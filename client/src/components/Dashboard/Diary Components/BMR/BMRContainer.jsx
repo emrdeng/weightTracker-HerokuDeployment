@@ -79,6 +79,7 @@ function BMRContainer(props) {
         headers: {
           'Content-type': 'application/json'
         },
+        credentials: 'include',
         body: JSON.stringify(allBMRValues)
       })
       .then((response) => {
