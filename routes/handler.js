@@ -156,7 +156,6 @@ router.get("/api/trends", async(req,res)=>{
 // BMR CONTAINER HANDLER:
 // THIS WILL HANDLE THE USER'S CHANGES TO THEIR BMR PROFILE. WHEN SUBMITTED, IT GETS SAVED IN THIS ROUTE TO MONGODB THROUGH MONGOOSE.
 router.post("/addBMR", async (req, res)=>{
-    console.log("/addBMR route has been reached. This updates MongoDB.")
     let genderInput = req.body.genderInput;
     let ageInput = req.body.ageInput;
     let ftInput = req.body.ftInput;
@@ -220,8 +219,6 @@ router.post("/addBMR", async (req, res)=>{
 
     } catch(e){
         console.log(e);
-        //FOR DEBUGGING. REMOVE.
-        // Send an error response
         return res.status(500).json({ success: false, message: e.message });
     }  
 })

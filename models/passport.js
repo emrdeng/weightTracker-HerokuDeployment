@@ -10,11 +10,6 @@ passport.use(new GoogleStrategy({
     scope: ['profile','email', 'openid']
   },
   function(accessToken, refreshToken, profile, cb) {
-    console.log(profile);
-    // User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //   return cb(err, user);
-    // });
-    //Checks userSchema for anyone with a facebook ID of profile.id
     User.findOne({googleId: profile.id}, function(err,user){
       if(err){
         return cb(err);
@@ -39,13 +34,10 @@ passport.use(new GoogleStrategy({
 )); //End of the passport.use(new GoogleStrategy)
 
 passport.serializeUser(function(user, done) {
-  console.log("Serializing user:" + JSON.stringify(user));
-  console.log("user.id information is: " + JSON.stringify(user.id))
   done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  console.log("Deserializing user with ID:" + JSON.stringify(id));
   User.findById(id, function (err, user) {
     done(err, user);
   });

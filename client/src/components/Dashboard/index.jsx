@@ -31,7 +31,7 @@ const DashBoard = () => {
   function seeingOneFoodSelection(selectedItems){
     setOneSelectedFood(selectedItems);
   }
-  // console.log(oneSelectedFood);
+
   // GATHER USER INFORMATION:
   const [userInfo, setUserID] = useState({})
   const [exerciseDataUpdated, setExerciseDataUpdated] = useState(false);
@@ -75,7 +75,7 @@ const DashBoard = () => {
             totalCarbs: totalCarbs,
             totalFat: totalFat,
           });
-          console.log(userInfo);
+          // console.log(userInfo);
       })
       .catch(error => {
           console.log(error);

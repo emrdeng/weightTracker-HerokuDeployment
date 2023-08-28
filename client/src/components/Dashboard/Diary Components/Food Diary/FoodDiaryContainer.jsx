@@ -77,8 +77,6 @@ function FoodDiaryContainer(props) {
   const handleDiaryItemRemove = async (selected) => {
     try {
         const response = await axios.post('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/removeDiaryItem', { selected });
-        console.log(response);
-        console.log(response.data);
         props.diaryItemRemoved();
     } catch (error) {
         console.error(error);
@@ -115,7 +113,6 @@ function FoodDiaryContainer(props) {
   // THIS WILL HANDLE POSTING THE SELECTED FOOD API SEARCH RESULTS INTO THE DIARY IN THE BACKEND:
   const handleFoodDiarySubmit = async (selected) => {
     closeFoodModal();
-    console.log(selected);
     const data = selected.map((eachFood) => {
       return {
         userID: props.userID,
@@ -128,11 +125,8 @@ function FoodDiaryContainer(props) {
         fat: eachFood.fat_total_g
       }
     })
-    console.log(data);
     try {
         const response = await axios.post('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/foodModal/foodDiarySave', data);
-        console.log(response);
-        console.log(response.data);
         props.foodDiaryUpdated();
     } catch (error) {
         console.error(error);

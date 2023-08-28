@@ -35,12 +35,6 @@ const corsOptions = {
 }
 app.use(cors(corsOptions))
 
-// app.use(cors({
-//   origin: "http://localhost:3000",
-//   methods: "GET, POST, PUT, DELETE",
-//   credentials: true,
-// }));
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
@@ -62,9 +56,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req,res,next)=>{
-  console.log('Session data:', JSON.stringify(req.session));
-  console.log('User data:', JSON.stringify(req.user));
-  console.log('Cookie data:', JSON.stringify(req.cookies));
   next();
 });
 

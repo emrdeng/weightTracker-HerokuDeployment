@@ -19,10 +19,6 @@ router.get('/google/callback',
 );
 
 router.get("/login/success", (req, res) => {
-  console.log("Login success route reached"); // Log when the /login/success route is reached
-  console.log("Console.log req.user: " + JSON.stringify(req.user))
-  console.log("Console.log req.isAuthenticated(): " + JSON.stringify(req.isAuthenticated()))
-  
   if (req.user) {
     res.status(200).json({
       success: true,

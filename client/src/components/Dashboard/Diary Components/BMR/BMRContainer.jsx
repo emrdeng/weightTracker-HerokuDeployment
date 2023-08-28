@@ -106,7 +106,6 @@ function BMRContainer(props) {
     }
 
     function fetchUpdatedBMR(){
-      console.log("fetchUpdatedBMR() reached!")
       fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/api/dashboard', {
           method: 'GET',
           headers: {'Content-Type': 'application/json'},
