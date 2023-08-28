@@ -58,8 +58,8 @@ const DashBoard = () => {
           setUserID({
             userID: data._id,
             userName: data.username,
-            weightArray: data.weight.length == [] ? "" : data.weight,
-            latestWeight: data.weight.length == [] ? "" : data.weight[data.weight.length-1].weight,
+            weightArray: data.weight.length === [] ? "" : data.weight,
+            latestWeight: data.weight.length === [] ? "" : data.weight[data.weight.length-1].weight,
             BMR: data.bmr,
             age: data.age,
             gender: data.gender,
