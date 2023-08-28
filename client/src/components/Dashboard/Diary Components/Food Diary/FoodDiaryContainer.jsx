@@ -179,7 +179,7 @@ function FoodDiaryContainer(props) {
       }
     })
     try {
-        const response = await axios.post('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/exerciseDiarySave', data);
+        const response = await axios.post('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/exerciseModal/exerciseDiarySave', data);
         props.exerciseDiaryUpdated();
     } catch (error) {
         console.error(error);

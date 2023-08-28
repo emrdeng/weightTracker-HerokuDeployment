@@ -302,10 +302,10 @@ router.post("/foodModal/foodDiarySave", async (req, res) => {
         user.food.push(newFood);
         await user.save();
     }
-    res.status(200).send("Exercise successfully added to diary");
+    res.status(200).send("Food successfully added to diary");
     } catch (error) {
         console.error(error);
-        res.status(500).send("Error adding exercise to diary");
+        res.status(500).send("Error adding food to diary");
     }
 });
 
