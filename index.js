@@ -13,7 +13,11 @@ require("./models/passport");
 let app = express();
 
 // ** MIDDLEWARE ** //
-const whitelist = ['https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/, https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/addBMR, https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/api/dashboard']
+const whitelist = [
+  'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/',
+  'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/addBMR',
+  'https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/api/dashboard'
+];
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("** Origin of request " + origin)
@@ -24,7 +28,9 @@ const corsOptions = {
       console.log("Origin rejected")
       callback(new Error('Not allowed by CORS'))
     }
-  }
+  },
+  optionsSuccessStatus: 200,
+  credentials: true
 }
 app.use(cors(corsOptions))
 

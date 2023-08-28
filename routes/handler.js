@@ -219,10 +219,10 @@ router.post("/addBMR", async (req, res)=>{
         res.json({ success: true, bmr: bmrCalc() });
 
     } catch(e){
-        return console.log(e);
+        console.log(e);
         //FOR DEBUGGING. REMOVE.
         // Send an error response
-        res.status(500).json({ success: false, message: e.message });
+        return res.status(500).json({ success: false, message: e.message });
     }  
 })
 
