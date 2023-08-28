@@ -74,7 +74,7 @@ function BMRContainer(props) {
     // WILL POST THE FORM DATA TO BACKEND SERVER.
     function formSubmit(event){
       updateBMR()
-      fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/api/dashboard/addBMR', {
+      fetch('https://weight-tracker-diary-2dad58c2fcb4.herokuapp.com/addBMR', {
         method: "POST",
         headers: {
           'Content-type': 'application/json'
